@@ -6,10 +6,11 @@ Authors: Robinson Montes
         Carlos Murcia
 """
 import uuid
-import datetime
+from datetime import datetime
+import models
 
 
-class BaseModel():
+class BaseModel:
     """
     base_model that defines all common attributes/methods for other classes
     """
@@ -29,14 +30,15 @@ class BaseModel():
         if len(kwargs) > 0:
             for k, v in kwargs.items():
                 if k in ['created_at', 'updated_at']:
-                    self.__dict__[k] = datetime.datetime\
-                        .strptime(v, '%Y-%m-%dT%H:%M:%S.%f')
-            else:
-                    self.__dict__[k] = v
+                    self.__dict__[k] = datetime\
+                                       .strptime(v, '%Y-%m-%dT%H:%M:%S.%f')
+                elif k == 'id':
+                    self.id = v
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.datetime.now()
-            self.updated_at = datetime.datetime.now()
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """str method for BaseModel Class
@@ -44,16 +46,16 @@ class BaseModel():
             Return:
                 string (str): string descriptor for BaseModel Class
         """
-        string = "[" + str(self.__class__.__name__) + "] ("
-        string += str(self.id) + ") " + str(self.__dict__)
-        return string
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
+                                     self.__dict__)
 
     def save(self):
         """
         updates the public instance attribute updated_at with the
         current datetime
         """
-        self.updated_at = datetime.datetime.now()
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of __dict__
