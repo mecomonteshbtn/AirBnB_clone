@@ -65,6 +65,9 @@ class HBNBCommand(cmd.Cmd):
             return
         if not self.verify_id(line):
             return
+        key = line[0] + '.' + line[1]
+        objects = models.storage.all()
+        print(objects[key])
 
     def do_destroy(self, args):
         """Destroy command that deletes an instance based on the class name
@@ -83,10 +86,30 @@ class HBNBCommand(cmd.Cmd):
         models.storage.delete(objects[key])
         models.storage.save()
 
+    def do_all(self, args):
+        """
+        Prints all string representation of all instances based
+        or not on the class name.
+        """
+        line = args.split()
+        objects = models.storage.all()
+        to_print = []
+        if len(line) == 0:
+            for v in objects.values():
+                to_print.append(str(v))
+        elif line[0] in HBNBCommand.class_list:
+            for k, v in objects.items():
+                if k == line[0]:
+                    to_print.append(str(v))
+        else:
+            print("** class doesn't exist **")
+            return
+        print(to_print)
+
     @classmethod
     def verify_class(cls, line):
         """Static method to verify inputed class"""
-        if len(line) < 2:
+        if len(line) == 0:
             print('** class name missing **')
             return False
         elif line[0] not in HBNBCommand.class_list:
