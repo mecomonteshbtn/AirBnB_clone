@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         line = args.split()
         if not self.verify_class(line):
             return
-        instance = eval(str(line[0]) + '()')
+        instance = eval(line[0] + '()')
         if isinstance(instance, BaseModel):
             instance.save()
             print(instance.id)
@@ -86,11 +86,11 @@ class HBNBCommand(cmd.Cmd):
     @classmethod
     def verify_class(cls, line):
         """Static method to verify inputed class"""
-        if len(line) == 0:
-            print('** class namer missing **')
+        if len(line) < 2:
+            print('** class name missing **')
             return False
         elif line[0] not in HBNBCommand.class_list:
-            print('** class doesn exist **')
+            print('** class doesn\'t exist **')
             return False
         return True
 
