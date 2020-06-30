@@ -9,13 +9,20 @@ Created on Mon Jun 29 07:56:17 2020
 import cmd
 import models
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
     """aclass that contains the entry point of the command interpreter.
     """
     prompt = '(hbnb) '
-    class_list = ['BaseModel']
+    class_list = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place',
+                  'Review']
 
     def do_EOF(self, args):
         """EOF command to exit the program.
@@ -65,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
             return
         if not self.verify_id(line):
             return
-        key = line[0] + line[1]
+        key = '{}.{}'.format(line[0], line[1])
         objects = models.storage.all()
         print(objects[key])
 
@@ -81,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             return
         if not self.verify_id(line):
             return
-        key = line[0] + line[1]
+        key = '{}.{}'.format(line[0], line[1])
         objects = models.storage.all()
         del objects[key]
         models.storage.save()
@@ -118,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
         if not self.verify_attribute(line):
             return
         objects = models.storage.all()
-        key = line[0] + line[1]
+        key = '{}.{}'.format(line[0], line[1])
         setattr(objects[key], line[2], line[3])
         models.storage.save()
 
@@ -141,7 +148,7 @@ class HBNBCommand(cmd.Cmd):
             print('** instance id missing **')
             return False
         objects = models.storage.all()
-        key = line[0] + line[1]
+        key = '{}.{}'.format(line[0], line[1])
         if key not in objects.keys():
             print('** no instance found **')
             return False
