@@ -1,1 +1,1 @@
-{"BaseModelf007c865-61aa-4b54-b6de-be260e271cb6": {"first_name": "\"Carlos\"", "updated_at": "2020-06-30T16:32:26.857210", "id": "f007c865-61aa-4b54-b6de-be260e271cb6", "created_at": "2020-06-30T16:32:26.857170", "__class__": "BaseModel"}}
+{"BaseModel9be230cd-82c7-4f4b-a41f-59bcfb9c52e2": {"__class__": "BaseModel", "last_name": "Murcia", "ocupation": "musician", "id": "9be230cd-82c7-4f4b-a41f-59bcfb9c52e2", "first_name": "Carlos", "created_at": "2020-06-30T17:41:18.246181", "updated_at": "2020-06-30T17:41:18.246222"}}
