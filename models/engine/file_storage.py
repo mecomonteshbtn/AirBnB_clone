@@ -41,7 +41,7 @@ class FileStorage:
             obj (Python object): The object to set
         """
         dictionary = obj.to_dict()
-        key = dictionary['__class__'] + str(obj.id)
+        key = '{}.{}'.format(dictionary['__class__'], str(obj.id))
         FileStorage.__objects[key] = obj
 
     def save(self):
@@ -55,7 +55,7 @@ class FileStorage:
 
     def reload(self):
         """deserializes the JSON file to __objects ONLY if the JASON file
-        exists, otherwise, do nothing.  If the file doesn’t exist, exceptions
+        exists, otherwise, do nothing.  If the file doesn't exist, exceptions
         should be raised
         """
         try:
@@ -64,4 +64,4 @@ class FileStorage:
             for k, v in json_load.items():
                 FileStorage.__objects[k] = BaseModel(**v)
         except:
-            return
+            pass
