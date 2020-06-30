@@ -106,6 +106,22 @@ class HBNBCommand(cmd.Cmd):
             return False
         print(to_print)
 
+    def do_update(self, args):
+        """Updates an instance based on the class name and id
+        by adding or updating attribute (save the change into the JSON file).
+        """
+        line = args.split()
+        if not self.verify_class(line):
+            return
+        if not self.verify_id(line):
+            return
+        if not self.verify_attribute(line):
+            return
+        objects = models.storage.all()
+        key = line[0] + line[1]
+        setattr(objects[key], line[2], line[3])
+        models.storage.save()
+
     @classmethod
     def verify_class(cls, line):
         """Static method to verify inputed class"""
@@ -132,8 +148,8 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     @staticmethod
-    def verify_atribute(line):
-        """Static method to verify the atribute in inputted line.
+    def verify_attribute(line):
+        """Static method to verify the attribute in inputted line.
         """
         if len(line) < 3:
             print("** attribute name missing **")
@@ -142,8 +158,6 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
             return False
         return True
-
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
