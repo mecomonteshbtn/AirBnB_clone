@@ -131,6 +131,19 @@ class HBNBCommand(cmd.Cmd):
             return False
         return True
 
+    @staticmethod
+    def verify_atribute(line):
+        """Static method to verify the atribute.
+        """
+        if len(line) < 3:
+            print("** attribute name missing **")
+            return False
+        elif len(line) < 4:
+            print("** value missing **")
+            return False
+        return True
+        
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
