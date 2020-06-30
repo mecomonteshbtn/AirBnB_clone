@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
             return
         if not self.verify_id(line):
             return
-        key = line[0] + '.' + line[1]
+        key = line[0] + line[1]
         objects = models.storage.all()
         print(objects[key])
 
@@ -81,9 +81,9 @@ class HBNBCommand(cmd.Cmd):
             return
         if not self.verify_id(line):
             return
-        key = line[0] + '.' + line[1]
+        key = line[0] + line[1]
         objects = models.storage.all()
-        models.storage.delete(objects[key])
+        del objects[key]
         models.storage.save()
 
     def do_all(self, args):
@@ -99,11 +99,11 @@ class HBNBCommand(cmd.Cmd):
                 to_print.append(str(v))
         elif line[0] in HBNBCommand.class_list:
             for k, v in objects.items():
-                if k == line[0]:
+                if line[0] in k:
                     to_print.append(str(v))
         else:
             print("** class doesn't exist **")
-            return
+            return False
         print(to_print)
 
     @classmethod
@@ -125,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
             print('** instance id missing **')
             return False
         objects = models.storage.all()
-        key = line[0] + '.' + line[1]
+        key = line[0] + line[1]
         if key not in objects.keys():
             print('** no instance found **')
             return False
