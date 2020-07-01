@@ -164,8 +164,9 @@ IMPORTANT: The project was created in UBUNTU 14.04.3 LTS and Python 3.4.3.
 
 ## Team
 
-https://github.com/mecomonteshbtn
-https://github.com/Charliemur2
+<a href="https://github.com/mecomonteshbtn">`mecomonteshbtn`</a>
+<a href="https://github.com/Charliemur2">`Charliemur2`</a>
+
 
 ---
 
@@ -177,7 +178,6 @@ Feel free to contact us!
 - GitHub at <a href="https://github.com/mecomonteshbtn">`mecomonteshbtn`</a>
 - Twitter at <a href="https://twitter.com/charliesoka">`@charliesoka`</a>
 - Twitter at <a href="https://twitter.com/mecomontes">`@mecomontes`</a>
-- Insert more social links here.
 
 ---
 
