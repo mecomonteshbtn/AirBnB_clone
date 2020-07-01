@@ -129,6 +129,48 @@ class HBNBCommand(cmd.Cmd):
         setattr(objects[key], line[2], line[3])
         models.storage.save()
 
+    def default(self, args):
+        """Default method that is called when the inputted command starts
+        with a class name.
+
+        Attributes:
+            args (str): The inputted line string
+        """
+        line = args.strip('()').split(".")
+        if len(args) < 2:
+            print('provide more than one argument please')
+            return
+        objects = models.storage.all()
+        class_name = line[0].capitalize()
+        cmd_name = line[1].lower()
+        split2 = cmd_name.split('(')
+        cmd_name = split2[0]
+        if cmd_name == 'all':
+            HBNBCommand.do_all(self, class_name)
+        elif cmd_name == 'count':
+            count = 0
+            for k in objects.keys():
+                key = k.split('.')
+                if class_name == key[0]:
+                    count += 1
+            print(count)
+        elif cmd_name == 'destroy':
+            if len(split2) < 2:
+                print('** instance id missing **')
+            else:
+                HBNBCommand.do_destroy(self, class_name + ' ' + split2[1])
+        elif cmd_name == 'update':
+            split3 = split2[1].split(', ')
+            if len(split3) == 0:
+                print('** instance id missing **')
+            elif len(split3) == 1:
+                print('** instance attribute name missing **')
+            elif len(split3) == 2:
+                print('** instance attribute value missing **')
+            else:
+                HBNBCommand.do_update(self, class_name + ' ' + split3[0] +
+                                      ' ' + split3[1] + ' ' + split3[2])
+
     @classmethod
     def verify_class(cls, line):
         """Static method to verify inputed class"""
