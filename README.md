@@ -132,11 +132,13 @@ IMPORTANT: The project was created in UBUNTU 14.04.3 LTS and Python 3.4.3.
 
 ## Documentation 
 
-<a href="">``</a><br>
-<a href="">``</a><br>
-<a href="">``</a><br>
-<a href="">``</a><br>
-
+<a href="https://intranet.hbtn.io/rltoken/Fx9HXIjmGzbmET4ylYg2Rw">`cmd module`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/jKl9WFpKA-fPt7_guv9_3Q">`packages`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/eaQ6aELbdqb0WmPddhD00g">`uuid module`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/_ySDcgtfrwLkTyQzYHTH0Q">`datetime`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/QX7d4D__xhOJIGIWZBp39g">`unittest module`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/jQd3P_uSO0FeU6jlN-z5mg">`args/kwargs`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/WPlydsqB0PG0uVcixemv9A">`Python test cheatsheet`</a><br>
 ---
 
 ## Contributing
@@ -162,16 +164,20 @@ IMPORTANT: The project was created in UBUNTU 14.04.3 LTS and Python 3.4.3.
 
 ## Team
 
-https://github.com/Charliemur2
+<a href="https://github.com/mecomonteshbtn">`mecomonteshbtn`</a>
+<a href="https://github.com/Charliemur2">`Charliemur2`</a>
+
+
 ---
 
 ## Support
 
-Feel free to contact me!
+Feel free to contact us!
 
 - GitHub at <a href="https://github.com/Charliemur2">`Charliemur2`</a>
+- GitHub at <a href="https://github.com/mecomonteshbtn">`mecomonteshbtn`</a>
 - Twitter at <a href="https://twitter.com/charliesoka">`@charliesoka`</a>
-- Insert more social links here.
+- Twitter at <a href="https://twitter.com/mecomontes">`@mecomontes`</a>
 
 ---
 
