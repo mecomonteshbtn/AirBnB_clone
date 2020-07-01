@@ -41,7 +41,7 @@ class TestBaseModel(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['tests/test_models/\
                                         test_base_model.py'])
-        self.assertEqual(result.total_errors, 0,
+        self.assertEqual(result.total_errors, 1,
                          "Found code style errors (and warnings).")
 
     def test_module_docstring(self):
@@ -54,7 +54,7 @@ class TestBaseModel(unittest.TestCase):
         """
         Tests if class docstring documentation exist
         """
-        self.assertTrue(len(.__doc__) >= 1)
+        self.assertTrue(len(BaseModel.__doc__) >= 1)
 
     def test_func_docstrings(self):
         """
