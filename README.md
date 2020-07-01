@@ -132,11 +132,13 @@ IMPORTANT: The project was created in UBUNTU 14.04.3 LTS and Python 3.4.3.
 
 ## Documentation 
 
-<a href="">``</a><br>
-<a href="">``</a><br>
-<a href="">``</a><br>
-<a href="">``</a><br>
-
+<a href="https://intranet.hbtn.io/rltoken/Fx9HXIjmGzbmET4ylYg2Rw">`cmd module`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/jKl9WFpKA-fPt7_guv9_3Q">`packages`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/eaQ6aELbdqb0WmPddhD00g">`uuid module`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/_ySDcgtfrwLkTyQzYHTH0Q">`datetime`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/QX7d4D__xhOJIGIWZBp39g">`unittest module`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/jQd3P_uSO0FeU6jlN-z5mg">`args/kwargs`</a><br>
+<a href="https://intranet.hbtn.io/rltoken/WPlydsqB0PG0uVcixemv9A">`Python test cheatsheet`</a><br>
 ---
 
 ## Contributing
