@@ -153,7 +153,7 @@ IMPORTANT: The project was created in UBUNTU 14.04.3 LTS and Python 3.4.3.
 - **Option 2**
     - 👯 Clone this repo to your local machine using 
 
-### S 2
+### Step 2
 
 - **HACK AWAY!** 🔨🔨🔨
 
