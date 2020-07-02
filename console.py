@@ -143,7 +143,7 @@ class HBNBCommand(cmd.Cmd):
         objects = models.storage.all()
         class_name = line[0].capitalize()
         cmd_name = line[1].lower()
-        split2 = cmd_name.split('(')
+        split2 = cmd_name.strip(')').split('(')
         cmd_name = split2[0]
         if cmd_name == 'all':
             HBNBCommand.do_all(self, class_name)
