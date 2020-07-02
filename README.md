@@ -91,7 +91,7 @@ Show the Class, object if the id is especified and its attributes
 [BaseModel] (e37cf8df-351a-4df6-9d15-fd9331a5bfb2) {'id': 'e37cf8df-351a-4df6-9d15-fd9331a5bfb2', 'created_at': datetime.datetime(2020, 7, 1, 18, 50, 15, 695895), 'updated_at': datetime.datetime(2020, 7, 1, 18, 50, 15, 695945)}
 (hbnb) 
 ```
-### all ###
+### alls ###
 shows all the instances
 ```
 (hbnb) all BaseModel
