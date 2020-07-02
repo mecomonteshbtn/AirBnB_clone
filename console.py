@@ -137,8 +137,8 @@ class HBNBCommand(cmd.Cmd):
             args (str): The inputted line string
         """
         line = args.strip('()').split(".")
-        if len(args) < 2:
-            print('provide more than one argument please')
+        if len(line) < 2:
+            print('** missing attribute **')
             return
         objects = models.storage.all()
         class_name = line[0].capitalize()
@@ -156,26 +156,26 @@ class HBNBCommand(cmd.Cmd):
             print(count)
         elif cmd_name == 'show':
             if len(split2) < 2:
-                print('** instance id missing **')
+                print('** no instance found **')
             else:
-                HBNBCommand.do_destroy(self, class_name + ' ' + split2[1])
+                HBNBCommand.do_show(self, class_name + ' ' + split2[1])
         elif cmd_name == 'destroy':
             if len(split2) < 2:
-                print('** instance id missing **')
+                print('** no instance found **')
             else:
                 HBNBCommand.do_destroy(self, class_name + ' ' + split2[1])
         elif cmd_name == 'update':
             split3 = split2[1].split(', ')
             if len(split3) == 0:
-                print('** instance id missing **')
+                print('** no instance found **')
             elif len(split3) == 1 and type(split3[1]) == dict:
                 for k, v in split[1].items():
                     HBNBCommand.do_update(self, class_name + ' ' + split3[0] +
                                           ' ' + k + ' ' + v)
             elif len(split3) == 1 and type(split3[1]) != dict:
-                print('** instance attribute name missing **')
+                print('** no instance found **')
             elif len(split3) == 2:
-                print('** instance attribute value missing **')
+                print('** no instance found **')
             else:
                 HBNBCommand.do_update(self, class_name + ' ' + split3[0] +
                                       ' ' + split3[1] + ' ' + split3[2])
